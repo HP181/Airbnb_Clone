@@ -33,8 +33,9 @@ const Header = ({ placeholder }) => {
   };
 
   const Search = (e) => {
-    e.preventDefault();
     
+    e.preventDefault();
+
     router.push({
       pathname: "/search",
       query: {
