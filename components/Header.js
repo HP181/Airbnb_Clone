@@ -32,7 +32,9 @@ const Header = ({ placeholder }) => {
     key: "selection",
   };
 
-  const Search = () => {
+  const Search = (e) => {
+    e.preventDefault();
+    
     router.push({
       pathname: "/search",
       query: {
@@ -67,6 +69,7 @@ const Header = ({ placeholder }) => {
       </div>
 
       {/* middle -  Search */}
+      <form onSubmit={Search}>
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm ">
         <input
           className="flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400 "
@@ -75,8 +78,9 @@ const Header = ({ placeholder }) => {
           placeholder={placeholder || "Start your search"}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
+        <SearchIcon onClick={Search} className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
       </div>
+      </form>
 
       {/* right   */}
       <div className="flex space-x-2 items-center justify-end text-gray-500 ">
@@ -84,8 +88,8 @@ const Header = ({ placeholder }) => {
         <GlobeAltIcon className="h-6 cursor-pointer" />
 
         <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
-          <MenuIcon className="h-6" />
-          <UserCircleIcon className="h-6" />
+          <MenuIcon className="h-6 cursor-pointer" />
+          <UserCircleIcon className="h-6 cursor-pointer" />
         </div>
       </div>
 
