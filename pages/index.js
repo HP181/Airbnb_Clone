@@ -60,11 +60,11 @@ export default function Home({ Data, CardsData }) {
 }
 
 export async function getStaticProps() {
-  const Data = await fetch("https://links.papareact.com/pyp").then((res) =>
+  const Data = await fetch("https://www.jsonkeeper.com/b/4G1G").then((res) =>
     res.json()
   );
 
-  const CardsData = await fetch("https://links.papareact.com/zp1").then((res) =>
+  const CardsData = await fetch("https://www.jsonkeeper.com/b/VHHT").then((res) =>
     res.json()
   );
 

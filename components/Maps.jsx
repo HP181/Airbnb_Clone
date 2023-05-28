@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactMapGL, {Marker, Popup} from "../node_modules/react-map-gl/dist/es6/index"
+import ReactMapGL, {Marker, Popup} from "react-map-gl/dist/es6"
 import { getCenter } from 'geolib'
 
 const Maps = ({searchResults}) => {
